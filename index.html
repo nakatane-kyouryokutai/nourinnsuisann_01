@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; img-src 'self' https://town.nakatane.kagoshima.jp; font-src 'self'; connect-src 'none'; base-uri 'self'; form-action 'self';">
+  <!-- クリックジャッキング対策は X-Frame-Options / frame-ancestors をサーバーヘッダーで別途設定してください -->
+  <meta name="description" content="中種子町で農林水産業等の事業を営む方、または新規で農林水産業を始めようと考えている方に向けて、補助金・就農支援など有益な情報を発信します。">
+  <title>農林水産業を始める・続けるための支援情報 | 中種子町</title>
+  <style>
+    /* ========== リセット & ベース ========== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, "Yu Gothic", sans-serif;
+      font-size: 16px;
+      line-height: 1.8;
+      color: #2c2c2c;
+      background: #f7f7f5;
+    }
+    a { color: #1a6e3a; text-decoration: none; }
+    a:hover { text-decoration: underline; color: #0e4a26; }
+    img { max-width: 100%; height: auto; }
+
+    /* ========== ヘッダー ========== */
+    .site-header {
+      background: linear-gradient(135deg, #1a6e3a 0%, #2d8a50 50%, #3aa060 100%);
+      color: #fff;
+      padding: 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
+    .header-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 24px;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+    }
+    .header-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: #fff;
+    }
+    .header-logo-icon {
+      width: 48px;
+      height: 48px;
+      background: rgba(255,255,255,0.2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      flex-shrink: 0;
+    }
+    .header-logo-text {
+      display: flex;
+      flex-direction: column;
+    }
+    .header-logo-text .town-name {
+      font-size: 11px;
+      opacity: 0.85;
+      letter-spacing: 0.05em;
+    }
+    .header-logo-text .site-title {
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      line-height: 1.3;
+    }
+    .header-contact-mini {
+      font-size: 12px;
+      opacity: 0.85;
+      text-align: right;
+      line-height: 1.6;
+    }
+    .header-contact-mini strong { font-size: 14px; }
+
+    /* ========== ヒーローバナー ========== */
+    .hero {
+      background: linear-gradient(to right, rgba(15,60,30,0.85), rgba(30,100,55,0.6)),
+                  url('https://town.nakatane.kagoshima.jp/shared/images/common/head_img.jpg') center/cover no-repeat;
+      min-height: 180px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 24px 24px 20px;
+    }
+    .hero-tag {
+      display: inline-block;
+      background: #f5c842;
+      color: #1a1a1a;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      padding: 3px 10px;
+      border-radius: 3px;
+      margin-bottom: 8px;
+    }
+    .hero-heading {
+      font-size: clamp(18px, 3.5vw, 26px);
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.4;
+      text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+    }
+    .hero-sub {
+      font-size: 13px;
+      color: rgba(255,255,255,0.9);
+      margin-top: 6px;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.4);
+    }
+
+    /* ========== パンくず ========== */
+    .breadcrumb {
+      background: #fff;
+      border-bottom: 1px solid #e0e0e0;
+      padding: 8px 24px;
+      font-size: 12px;
+      color: #666;
+    }
+    .breadcrumb a { color: #1a6e3a; }
+    .breadcrumb span + span::before { content: " ＞ "; color: #999; }
+
+    /* ========== メインレイアウト ========== */
+    .main-container {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 28px 20px 60px;
+    }
+    .layout-grid {
+      display: grid;
+      grid-template-columns: 1fr 260px;
+      gap: 28px;
+      align-items: start;
+    }
+
+    /* ========== 目次サイドバー ========== */
+    .sidebar {
+      position: sticky;
+      top: 16px;
+    }
+    .toc-box {
+      background: #fff;
+      border: 1px solid #d0e8d8;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+    }
+    .toc-box-header {
+      background: #1a6e3a;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .toc-box-header::before { content: "📋"; font-size: 14px; }
+    .toc-list { list-style: none; padding: 10px 0; }
+    .toc-list li { border-bottom: 1px solid #f0f0f0; }
+    .toc-list li:last-child { border-bottom: none; }
+    .toc-list a {
+      display: block;
+      padding: 9px 16px;
+      font-size: 13px;
+      color: #1a4a2e;
+      line-height: 1.5;
+      transition: background 0.15s;
+    }
+    .toc-list a:hover { background: #f0faf3; text-decoration: none; }
+    .toc-list a::before { content: "▶ "; font-size: 9px; color: #2d8a50; }
+
+    .contact-box {
+      margin-top: 16px;
+      background: #fff;
+      border: 1px solid #d0e8d8;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+    }
+    .contact-box-header {
+      background: #2d8a50;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 8px 14px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .contact-box-header::before { content: "📞"; font-size: 13px; }
+    .contact-box-body {
+      padding: 12px 14px;
+      font-size: 13px;
+      line-height: 1.8;
+      color: #333;
+    }
+    .contact-box-body .dept { font-weight: 700; color: #1a4a2e; font-size: 14px; }
+    .contact-box-body .tel { font-weight: 700; color: #1a6e3a; font-size: 16px; letter-spacing: 0.02em; }
+    .contact-box-body .naisen { font-size: 12px; color: #666; }
+
+    /* ========== メインコンテンツ共通 ========== */
+    .main-content section {
+      background: #fff;
+      border-radius: 10px;
+      margin-bottom: 24px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+      overflow: hidden;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 20px;
+      color: #fff;
+    }
+    .section-header.green { background: #1a6e3a; }
+    .section-header.teal { background: #1a7a5e; }
+    .section-header.olive { background: #5a7a1a; }
+    .section-header.brown { background: #7a4a1a; }
+    .section-header.indigo { background: #2a3a7a; }
+
+    .section-icon { font-size: 22px; flex-shrink: 0; }
+    .section-title {
+      font-size: 18px;
+      font-weight: 900;
+      line-height: 1.3;
+    }
+    .section-title-sub {
+      font-size: 12px;
+      opacity: 0.85;
+      font-weight: 400;
+      display: block;
+      margin-top: 1px;
+    }
+
+    .section-body { padding: 20px 22px; }
+
+    /* ========== 新着情報 ========== */
+    .news-empty {
+      background: #f9f9f7;
+      border: 2px dashed #c8e0d0;
+      border-radius: 6px;
+      padding: 16px 20px;
+      color: #888;
+      font-size: 14px;
+    }
+    .news-note {
+      font-size: 12px;
+      color: #999;
+      margin-top: 6px;
+    }
+
+    /* ========== 補助金カード ========== */
+    .subsidy-badge {
+      display: inline-block;
+      background: #e8f5e9;
+      color: #1a6e3a;
+      border: 1px solid #a5d6b0;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 2px 10px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+    }
+    .subsidy-note {
+      font-size: 13px;
+      color: #555;
+      padding: 12px 16px;
+      background: #f9fdf9;
+      border-left: 4px solid #2d8a50;
+      border-radius: 0 6px 6px 0;
+    }
+
+    /* ========== 就農メニュー ========== */
+    .link-card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .link-card {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 14px;
+      background: #f4fbf6;
+      border: 1px solid #b8dfc4;
+      border-radius: 8px;
+      font-size: 14px;
+      color: #1a4a2e;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+    .link-card:hover {
+      background: #e4f5e9;
+      border-color: #1a6e3a;
+      text-decoration: none;
+      transform: translateY(-2px);
+      box-shadow: 0 3px 8px rgba(26,110,58,0.15);
+    }
+    .link-card-icon { font-size: 20px; flex-shrink: 0; }
+    .link-card span { line-height: 1.4; }
+    .link-card .link-tag {
+      font-size: 10px;
+      font-weight: 400;
+      color: #888;
+      display: block;
+    }
+
+    /* ========== 認定制度タブ ========== */
+    .tabs {
+      display: flex;
+      gap: 0;
+      border-bottom: 2px solid #1a6e3a;
+      margin-bottom: 0;
+    }
+    .tab-btn {
+      padding: 11px 20px;
+      border: none;
+      background: #e8f5e9;
+      color: #1a4a2e;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      border-radius: 6px 6px 0 0;
+      border: 1px solid #a5d6b0;
+      border-bottom: none;
+      margin-right: 4px;
+      transition: all 0.2s;
+      font-family: inherit;
+    }
+    .tab-btn.active {
+      background: #1a6e3a;
+      color: #fff;
+      border-color: #1a6e3a;
+    }
+    .tab-btn:hover:not(.active) { background: #d0ecda; }
+
+    .tab-panel { display: none; padding: 20px 0 0; }
+    .tab-panel.active { display: block; }
+
+    .system-intro {
+      background: #f4fbf6;
+      border-left: 4px solid #2d8a50;
+      padding: 14px 18px;
+      border-radius: 0 8px 8px 0;
+      font-size: 14px;
+      margin-bottom: 20px;
+      line-height: 1.8;
+    }
+
+    .policy-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+    .policy-card {
+      background: #fff;
+      border: 1px solid #c8e0d0;
+      border-radius: 8px;
+      padding: 14px 16px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+    }
+    .policy-card-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: #1a4a2e;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .policy-card-title::before { content: "✦"; color: #2d8a50; font-size: 12px; }
+    .policy-card p { font-size: 13px; color: #555; line-height: 1.7; }
+    .policy-card .highlight {
+      display: inline-block;
+      background: #fff3cd;
+      color: #856404;
+      font-weight: 700;
+      padding: 1px 8px;
+      border-radius: 3px;
+      font-size: 13px;
+    }
+
+    .how-to-apply {
+      background: #fff8e1;
+      border: 1px solid #ffe082;
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin-bottom: 16px;
+    }
+    .how-to-apply h4 {
+      font-size: 15px;
+      font-weight: 700;
+      color: #e65100;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .how-to-apply h4::before { content: "📝"; font-size: 16px; }
+
+    .apply-items {
+      list-style: none;
+      font-size: 13px;
+      color: #444;
+    }
+    .apply-items li {
+      padding: 5px 0 5px 20px;
+      position: relative;
+      border-bottom: 1px dotted #e0e0e0;
+      line-height: 1.6;
+    }
+    .apply-items li:last-child { border-bottom: none; }
+    .apply-items li::before {
+      content: "・";
+      position: absolute;
+      left: 4px;
+      color: #2d8a50;
+    }
+
+    .file-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+    .file-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 6px 14px;
+      background: #fff;
+      border: 1px solid #1a6e3a;
+      color: #1a6e3a;
+      border-radius: 4px;
+      font-size: 13px;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+    .file-link:hover { background: #1a6e3a; color: #fff; text-decoration: none; }
+    .file-link::before { content: "📄"; font-size: 14px; }
+
+    .notice-box {
+      background: #e8f5e9;
+      border: 1px solid #a5d6b0;
+      border-radius: 6px;
+      padding: 12px 16px;
+      font-size: 13px;
+      color: #1a4a2e;
+      margin-top: 16px;
+      line-height: 1.8;
+    }
+    .notice-box::before { content: "ℹ️ "; font-size: 14px; }
+
+    /* ========== dayworkセクション ========== */
+    .daywork-card {
+      background: linear-gradient(135deg, #fff8e1 0%, #fffde7 100%);
+      border: 1px solid #ffe082;
+      border-radius: 10px;
+      padding: 20px;
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      margin-bottom: 16px;
+    }
+    .daywork-icon {
+      width: 64px;
+      height: 64px;
+      background: linear-gradient(135deg, #ff6f00, #ffa000);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      flex-shrink: 0;
+      box-shadow: 0 3px 8px rgba(255,111,0,0.3);
+    }
+    .daywork-info h4 {
+      font-size: 16px;
+      font-weight: 900;
+      color: #e65100;
+      margin-bottom: 6px;
+    }
+    .daywork-info p { font-size: 14px; color: #555; line-height: 1.7; }
+    .daywork-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 12px;
+      padding: 8px 18px;
+      background: #ff6f00;
+      color: #fff;
+      font-weight: 700;
+      font-size: 14px;
+      border-radius: 6px;
+      transition: background 0.2s;
+    }
+    .daywork-link:hover { background: #e65100; text-decoration: none; color: #fff; }
+    .daywork-link::after { content: " →"; }
+
+    .producer-note {
+      background: #f3e5f5;
+      border-left: 4px solid #7b1fa2;
+      padding: 14px 18px;
+      border-radius: 0 8px 8px 0;
+      font-size: 14px;
+      color: #4a148c;
+      line-height: 1.8;
+    }
+    .producer-note strong { color: #6a1b9a; }
+
+    /* ========== 国・県リンク ========== */
+    .link-section-group { margin-bottom: 20px; }
+    .link-section-group:last-child { margin-bottom: 0; }
+    .link-section-group h4 {
+      font-size: 14px;
+      font-weight: 700;
+      color: #fff;
+      padding: 7px 14px;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .link-section-group h4.pref { background: #1565c0; }
+    .link-section-group h4.national { background: #b71c1c; }
+    .link-section-group h4.other { background: #4caf50; }
+
+    .external-link-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .external-link-list li a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      background: #f9f9f9;
+      border: 1px solid #e0e0e0;
+      border-radius: 6px;
+      font-size: 14px;
+      color: #1a237e;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+    .external-link-list li a:hover {
+      background: #e8eaf6;
+      border-color: #3949ab;
+      text-decoration: none;
+    }
+    .external-link-list li a::before { content: "🔗"; font-size: 14px; flex-shrink: 0; }
+    .ext-badge {
+      margin-left: auto;
+      font-size: 10px;
+      color: #999;
+      border: 1px solid #ccc;
+      padding: 1px 6px;
+      border-radius: 3px;
+      flex-shrink: 0;
+    }
+
+    /* ========== お問い合わせボックス ========== */
+    .contact-section {
+      background: #e8f5e9;
+      border: 1px solid #a5d6b0;
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin-top: 14px;
+    }
+    .contact-section h5 {
+      font-size: 14px;
+      font-weight: 700;
+      color: #1a4a2e;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .contact-section h5::before { content: "📞"; font-size: 14px; }
+    .contact-section p { font-size: 13px; color: #333; line-height: 1.9; }
+    .contact-section .tel-num { font-size: 16px; font-weight: 700; color: #1a6e3a; }
+    .contact-section .naisen { font-size: 12px; color: #666; }
+
+    /* ========== フッター ========== */
+    .site-footer {
+      background: #1a3a2a;
+      color: rgba(255,255,255,0.85);
+      padding: 30px 24px 20px;
+      margin-top: 40px;
+    }
+    .footer-inner {
+      max-width: 1040px;
+      margin: 0 auto;
+    }
+    .footer-office {
+      font-size: 13px;
+      line-height: 2;
+      margin-bottom: 16px;
+    }
+    .footer-office strong { color: #fff; font-size: 15px; }
+    .footer-divider {
+      border: none;
+      border-top: 1px solid rgba(255,255,255,0.15);
+      margin: 16px 0;
+    }
+    .footer-copy {
+      font-size: 12px;
+      color: rgba(255,255,255,0.5);
+      text-align: center;
+    }
+    .footer-links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 12px;
+      font-size: 12px;
+    }
+    .footer-links a { color: rgba(255,255,255,0.7); }
+    .footer-links a:hover { color: #fff; }
+
+    /* ========== 更新日バッジ ========== */
+    .update-date {
+      font-size: 12px;
+      color: #888;
+      text-align: right;
+      padding: 8px 22px 0;
+    }
+
+    /* ========== レスポンシブ ========== */
+    @media (max-width: 768px) {
+      .layout-grid {
+        grid-template-columns: 1fr;
+      }
+      .sidebar {
+        position: static;
+        order: -1;
+      }
+      .toc-box, .contact-box { margin-bottom: 0; }
+      .sidebar { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 0; }
+      .header-contact-mini { display: none; }
+      .daywork-card { flex-direction: column; }
+      .tabs { flex-direction: column; border-bottom: none; }
+      .tab-btn { border-radius: 4px; margin-right: 0; margin-bottom: 4px; border-bottom: 1px solid #a5d6b0; }
+    }
+    @media (max-width: 480px) {
+      .sidebar { grid-template-columns: 1fr; }
+      .policy-grid { grid-template-columns: 1fr; }
+      .link-card-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ========== ヘッダー ========== -->
+<header class="site-header">
+  <div class="header-top">
+    <a href="https://town.nakatane.kagoshima.jp/" class="header-logo">
+      <div class="header-logo-icon">🌿</div>
+      <div class="header-logo-text">
+        <span class="town-name">鹿児島県 中種子町</span>
+        <span class="site-title">農林水産業 支援情報ポータル</span>
+      </div>
+    </a>
+    <div class="header-contact-mini">
+      <strong>農林水産課</strong><br>
+      TEL：0997-27-1111（内線224）
+    </div>
+  </div>
+  <div class="hero">
+    <span class="hero-tag">AGRICULTURE ／ FORESTRY ／ FISHERIES</span>
+    <h1 class="hero-heading">農林水産業を始める・続けるための<br>支援情報（中種子町）</h1>
+    <p class="hero-sub">中種子町で農林水産業等の事業を営む方、または新規で農林水産業を始めようと考えている方に向けて、有益な情報を発信します。</p>
+  </div>
+</header>
+
+<!-- ========== パンくずリスト ========== -->
+<nav class="breadcrumb" aria-label="パンくずリスト">
+  <span><a href="https://town.nakatane.kagoshima.jp/">ホーム</a></span>
+  <span><a href="https://town.nakatane.kagoshima.jp/koho/machinojoho/index.html">町の情報</a></span>
+  <span><a href="https://town.nakatane.kagoshima.jp/koho/machinojoho/nogyo/index.html">農林水産業</a></span>
+  <span>農林水産業支援情報</span>
+</nav>
+
+<!-- ========== メインコンテンツ ========== -->
+<div class="main-container">
+  <div class="layout-grid">
+
+    <!-- 本文 -->
+    <main class="main-content">
+
+      <!-- ① 新着情報 -->
+      <section id="news">
+        <div class="section-header green">
+          <span class="section-icon">🔔</span>
+          <div>
+            <div class="section-title">新着情報</div>
+            <span class="section-title-sub">最新の補助金・募集情報</span>
+          </div>
+        </div>
+        <div class="section-body">
+          <div class="subsidy-badge">募集中の補助金</div>
+          <div class="news-list" style="margin-top:12px;">
+
+            <!-- 掲載手順：
+                 掲載する場合   → 下の「掲載する場合ここから〜ここまで」のコメントを外し、タイトルとhrefを書き換え、「掲載なし表示」行をコメントアウト
+                 掲載をやめる場合 → リンク行をコメントアウトし、「掲載なし表示」行のコメントを外す
+            -->
+
+            <!-- 掲載する場合ここから
+            <a href="news-1.html" style="display:block; padding:12px 14px; background:#fafaf8; border:1px solid #d8d8d0; border-radius:8px; color:#1a4a2e; font-size:14px; text-decoration:none; margin-bottom:8px;">
+              ●●補助制度について
+            </a>
+            <a href="news-2.html" style="display:block; padding:12px 14px; background:#fafaf8; border:1px solid #d8d8d0; border-radius:8px; color:#1a4a2e; font-size:14px; text-decoration:none;">
+              〇〇制度について
+            </a>
+            掲載する場合ここまで -->
+
+            <!-- 掲載なし表示（掲載中は下の行をコメントアウト） -->
+            <p style="margin:0; padding:12px 14px; background:#fafaf8; color:#666; border:1px solid #d8d8d0; border-radius:8px; font-size:14px;">現在、新着情報はありません。</p>
+
+          </div>
+
+          <div style="margin-top: 20px;">
+            <div class="subsidy-badge" style="background:#fce4ec; color:#b71c1c; border-color:#f48fb1;">その他の補助制度</div>
+            <div class="subsidy-note">
+              機械導入・施設整備・経営支援などの補助制度があります。現在募集中でない場合もありますので、詳細は農林水産課までお問い合わせください。
+            </div>
+          </div>
+
+          <div class="contact-section">
+            <h5>問い合わせ先</h5>
+            <p>
+              <strong>中種子町農林水産課</strong><br>
+              <span class="tel-num">TEL：0997-27-1111</span>
+              <span class="naisen">（内線224）</span>
+            </p>
+          </div>
+        </div>
+        <div class="update-date">最終更新日：令和7年5月</div>
+      </section>
+
+      <!-- ② 新規就農者向け -->
+      <section id="new-farmer">
+        <div class="section-header teal">
+          <span class="section-icon">🌱</span>
+          <div>
+            <div class="section-title">新規就農者の方・農業に興味がある方へ</div>
+            <span class="section-title-sub">まずはここからご確認ください</span>
+          </div>
+        </div>
+        <div class="section-body">
+          <div class="link-card-grid">
+            <a href="#daywork" class="link-card">
+              <span class="link-card-icon">📱</span>
+              <span>
+                まずはお試し<br>
+                <span class="link-tag">1日農業バイトアプリ「daywork」</span>
+              </span>
+            </a>
+            <a href="./files/nyugyo_process.pdf" class="link-card" target="_blank" rel="noopener noreferrer">
+              <span class="link-card-icon">📋</span>
+              <span>
+                就農までのプロセス<br>
+                <span class="link-tag">PDF資料</span>
+              </span>
+            </a>
+            <a href="https://www.instagram.com/nakatane_nourinsuisanka/" class="link-card" target="_blank" rel="noopener noreferrer">
+              <span class="link-card-icon">📸</span>
+              <span>
+                中種子町の農林漁業の暮らし（Instagram）
+              </span>
+            </a>
+            <a href="https://note.com/nakatane_nourin/all" class="link-card" target="_blank" rel="noopener noreferrer">
+              <span class="link-card-icon">📝</span>
+              <span>
+                中種子町の農林漁業の暮らし（note）
+              </span>
+            </a>
+          </div>
+
+          <div class="contact-section">
+            <h5>その他、新規就農に関するご相談はこちら</h5>
+            <p>
+              <strong>中種子町農林水産課</strong><br>
+              <span class="tel-num">TEL：0997-27-1111</span>
+              <span class="naisen">（内線224）</span>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ③ 認定制度 -->
+      <section id="nintei">
+        <div class="section-header olive">
+          <span class="section-icon">📜</span>
+          <div>
+            <div class="section-title">認定新規就農者制度・認定農業者制度</div>
+            <span class="section-title-sub">これから始める方・既に経営している方向けの支援制度</span>
+          </div>
+        </div>
+        <div class="section-body">
+
+          <!-- タブ -->
+          <div class="tabs" role="tablist">
+            <button class="tab-btn active" role="tab" aria-selected="true" data-tab="shinki">
+              🌿 認定新規就農者<span style="font-size:11px; font-weight:400; display:block;">これから農業を始める人</span>
+            </button>
+            <button class="tab-btn" role="tab" aria-selected="false" data-tab="ninteino">
+              🌾 認定農業者<span style="font-size:11px; font-weight:400; display:block;">既に農業経営をしている人</span>
+            </button>
+          </div>
+
+          <!-- タブ①：認定新規就農者 -->
+          <div id="tab-shinki" class="tab-panel active">
+            <div class="system-intro">
+              新たに農業を始める方が作成する「<strong>青年等就農計画</strong>」を市町村が認定し、その計画に沿って農業を営む認定新規就農者に対して、重点的に支援措置を講じる制度です。
+            </div>
+            <p style="font-size:13px; margin-bottom:16px;">
+              <a href="https://www.maff.go.jp/j/new_farmer/nintei_syunou.html" target="_blank" rel="noopener noreferrer" style="color:#1a6e3a; font-weight:700;">▶ 認定新規就農者制度についての詳細はこちら（農林水産省）</a>
+            </p>
+
+            <h4 style="font-size:15px; font-weight:700; color:#3a5a1a; margin-bottom:12px;">📌 認定新規就農者が利用できる主な施策</h4>
+            <div class="policy-grid">
+              <div class="policy-card">
+                <div class="policy-card-title"><a href="https://www.maff.go.jp/j/new_farmer/n_syunou/roudou.html" target="_blank" rel="noopener noreferrer">経営開始資金</a></div>
+                <p>就農直後（3年以内）の所得を確保する資金を交付します。<br>
+                  <span class="highlight">年間最大165万円</span>
+                </p>
+              </div>
+              <div class="policy-card">
+                <div class="policy-card-title"><a href="https://www.maff.go.jp/j/new_farmer/n_syunou/hatten.html" target="_blank" rel="noopener noreferrer">経営発展支援事業</a></div>
+                <p>就農後の経営発展のため、新規就農者の初期投資の取組を支援します。</p>
+              </div>
+              <div class="policy-card">
+                <div class="policy-card-title"><a href="https://www.maff.go.jp/j/new_farmer/n_kasituke/index2.html" target="_blank" rel="noopener noreferrer">無利子資金制度（青年等就農資金）</a></div>
+                <p>農業経営の開始に必要な機械・施設取得等のための資金について、<strong>無利子貸付</strong>を行っています。</p>
+              </div>
+            </div>
+            <p style="font-size:13px; color:#666; margin-bottom:18px;">その他、認定新規就農者向けの様々な支援策を受けることができます。</p>
+
+            <div class="how-to-apply">
+              <h4>認定新規就農者になるには？</h4>
+              <p style="font-size:13px; color:#555; margin-bottom:10px;">
+                認定を受けようとする農業者は、町へ「<strong>青年等就農計画認定申請書</strong>」を提出してください。
+              </p>
+              <ul class="apply-items">
+                <li>青年等就農計画の策定（就農地、就農形態、目標とする営農類型、将来の農業経営の構想）</li>
+                <li>農業経営の規模に関する目標（作付農地の概要、農畜産物の加工・販売その他の関連・附帯事業）</li>
+                <li>生産方式に関する目標（機械・施設の概要、新技術の導入等）</li>
+                <li>経営管理に関する目標（複式簿記での記帳等）</li>
+                <li>農業従事の態様等に関する目標（休日制の導入等）</li>
+                <li>目標を達成するために必要な措置（施設の設置、機械の導入等）</li>
+                <li>農業経営の構成（農業従事者の概要・知識及び技能に関する事項等）</li>
+              </ul>
+
+              <div class="file-links">
+                <a href="./files/nintei_shinnki.docx" class="file-link">申請様式（青年等就農計画認定申請書）</a>
+                <a href="./files/nintei_shinnki-syuusikeikaku-youshiki.xlsx" class="file-link">別添：収支計画</a>
+                <a href="./files/nintei_shinnki-image.pdf" class="file-link">申請書記入イメージ</a>
+                <a href="./files/nintei_shinnki-kisairei.pdf" class="file-link">記載例</a>
+              </div>
+            </div>
+
+            <div class="notice-box">
+              ご提出いただいた「青年等就農計画」は、年3回（おおむね<strong>7月・11月・3月</strong>）の認定会議で審査します。計画の有効期限は<strong>5年間</strong>です。期間終了を迎える方は再度の申請が必要です。計画の作成については関係機関で支援いたしますので、お気軽に農林水産課までご相談ください。
+            </div>
+          </div>
+
+          <!-- タブ②：認定農業者 -->
+          <div id="tab-ninteino" class="tab-panel">
+            <div class="system-intro">
+              農業者が市町村の農業経営基盤強化促進基本構想に示された農業経営の目標に向けて、自らの創意工夫に基づき、経営の改善を進めようとする計画を市町村等が認定し、認定を受けた農業者に対して支援措置を講じる制度です。
+            </div>
+            <p style="font-size:13px; margin-bottom:16px;">
+              <a href="https://www.maff.go.jp/j/kobetu_ninaite/n_seido/seido_ninaite.html" target="_blank" rel="noopener noreferrer" style="color:#1a6e3a; font-weight:700;">▶ 認定農業者制度についての詳細はこちら（農林水産省）</a>
+            </p>
+
+            <h4 style="font-size:15px; font-weight:700; color:#3a5a1a; margin-bottom:12px;">📌 認定農業者が利用できる主な施策</h4>
+            <div class="policy-grid">
+              <div class="policy-card">
+                <div class="policy-card-title"><a href="https://www.maff.go.jp/j/seisaku_tokatu/antei/keiei_antei.html" target="_blank" rel="noopener noreferrer">米・畑作物の収入減少影響緩和交付金（ナラシ対策）</a></div>
+                <p>米、麦、大豆等の当年産販売収入の合計が標準的収入を下回った場合に、その差額の<span class="highlight">９割を補てん</span>します。</p>
+              </div>
+              <div class="policy-card">
+                <div class="policy-card-title"><a href="https://www.maff.go.jp/j/g_biki/yusi/keiei/250326_7.html" target="_blank" rel="noopener noreferrer">農業経営基盤強化資金（スーパーL資金）</a></div>
+                <p>農業経営改善計画の認定を受けられた方の自主性と創意工夫を活かした経営改善を、資金面で応援する総合的な資金です。</p>
+              </div>
+            </div>
+            <p style="font-size:13px; color:#666; margin-bottom:18px;">その他、認定農業者向けの様々な支援策を受けることができます。</p>
+
+            <div class="how-to-apply">
+              <h4>認定農業者になるには？</h4>
+              <p style="font-size:13px; color:#555; margin-bottom:10px;">
+                認定を受けようとする農業者は、町へ「<strong>農業経営改善計画認定申請書</strong>」を提出してください。
+              </p>
+              <ul class="apply-items">
+                <li>農業経営体の営農活動の現状及び目標（営農類型、農業経営の現状と改善目標など）</li>
+                <li>農業経営の規模拡大に関する現状及び目標（生産の概要、農畜産物の加工・販売、農用地及び農業生産施設の概要など）</li>
+                <li>生産方式の合理化に関する現状と目標・措置（機械・施設の導入、新技術の導入など）</li>
+                <li>経営管理の合理化に関する現状と目標・措置（複式簿記での記帳など）</li>
+                <li>農業従事の態様の改善に関する目標・措置（休日制の導入など）</li>
+                <li>その他の農業経営の改善に関する目標・措置</li>
+              </ul>
+
+              <div class="file-links">
+                <a href="./files/ninntei_nougyou.xlsx" class="file-link">申請様式（農業経営改善計画）</a>
+                <a href="./files/ninntei_nougyou-kisaiyouryou.pdf" class="file-link">記入要領</a>
+                <a href="./files/ninntei_nougyou_kisaihouhou.pdf" class="file-link">記載方法</a>
+              </div>
+            </div>
+
+            <div class="notice-box">
+              ご提出いただいた「農業経営改善計画」は、年3回（おおむね<strong>7月・11月・3月</strong>）の認定会議で審査します。計画の有効期限は<strong>5年間</strong>です。期間終了を迎える方は再度の申請が必要です。計画の作成については関係機関で支援いたしますので、お気軽に農林水産課までご相談ください。
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ④ daywork -->
+      <section id="daywork">
+        <div class="section-header brown">
+          <span class="section-icon">📱</span>
+          <div>
+            <div class="section-title">１日農業バイトアプリ「daywork」のご案内</div>
+            <span class="section-title-sub">気軽に農業体験・担い手確保ツール</span>
+          </div>
+        </div>
+        <div class="section-body">
+          <div class="daywork-card">
+            <div class="daywork-icon">🌾</div>
+            <div class="daywork-info">
+              <h4>daywork デイワーク</h4>
+              <p>
+                「daywork デイワーク」は、<strong>１日単位・数時間から</strong>働ける農業専門のマッチングアプリです。農業で働きたい人（求職者）と生産者（求人者）をつなぎ、気軽に農業の仕事へ参加できる仕組みとして活用が広がっており、担い手不足対策としても活用されています。
+              </p>
+              <a href="https://day.work/" class="daywork-link" target="_blank" rel="noopener noreferrer">
+                あなたの休みの日だけ 1日バイトしてみませんか？
+              </a>
+            </div>
+          </div>
+
+          <div class="producer-note">
+            <strong>【生産者の皆様へ】</strong><br>
+            島内外問わず、意欲ある多様な担い手の確保・育成に繋げるため、中種子町でも今後、活用を進めていければ幸いです。ぜひご活用をお願いいたします。<br>
+            登録方法等については、お気軽に農林水産課までご相談ください。
+          </div>
+        </div>
+      </section>
+
+      <!-- ⑤ 国・県リンク -->
+      <section id="links">
+        <div class="section-header indigo">
+          <span class="section-icon">🔗</span>
+          <div>
+            <div class="section-title">国・県の補助金等・関連リンク</div>
+            <span class="section-title-sub">詳しい制度情報は各リンクからご確認ください</span>
+          </div>
+        </div>
+        <div class="section-body">
+
+          <div class="link-section-group">
+            <h4 class="pref">🏛️ 県のリンク（鹿児島県）</h4>
+            <ul class="external-link-list">
+              <li>
+                <a href="https://www.pref.kagoshima.jp/ag03/sangyo-rodo/nogyo/keiei/nouseisikin.html" target="_blank" rel="noopener noreferrer">
+                  農業制度資金のご案内
+                  <span class="ext-badge">外部</span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.pref.kagoshima.jp/sangyo-rodo/nogyo/nogyo/index.html" target="_blank" rel="noopener noreferrer">
+                  県の農業振興について
+                  <span class="ext-badge">外部</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="link-section-group">
+            <h4 class="national">🇯🇵 国のリンク（農林水産省）</h4>
+            <ul class="external-link-list">
+              <li>
+                <a href="https://www.maff.go.jp/j/supply/hozyo/index.html" target="_blank" rel="noopener noreferrer">
+                  補助事業参加者の公募
+                  <span class="ext-badge">外部</span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.maff.go.jp/j/lower.html#4" target="_blank" rel="noopener noreferrer">
+                  農林水産業に係る国の政策
+                  <span class="ext-badge">外部</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="link-section-group">
+            <h4 class="other">🌐 その他のリンク</h4>
+            <ul class="external-link-list">
+              <li>
+                <a href="https://yuki-hajimeru.net/?p=13372" target="_blank" rel="noopener noreferrer">
+                  新・農業人ポータルサイト（農林水産省）
+                  <span class="ext-badge">外部</span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.be-farmer.jp/" target="_blank" rel="noopener noreferrer">
+                  農業をはじめる.JP（全国新規就農相談センター）
+                  <span class="ext-badge">外部</span>
+                </a>
+              </li>
+              <li>
+                <a href="https://town.nakatane.kagoshima.jp/koho/kurashi/shushoku-rodo/u-i/index.html" target="_blank" rel="noopener noreferrer">
+                  中種子町の移住・定住情報
+                  <span class="ext-badge">外部</span>
+                </a>
+              </li>
+              <li>
+                <a href="https://town.nakatane.kagoshima.jp/tiiki/kurashi/akiyajyouhou.html" target="_blank" rel="noopener noreferrer">
+                  中種子町の空き家情報
+                  <span class="ext-badge">外部</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </section>
+
+    </main><!-- /.main-content -->
+
+    <!-- サイドバー -->
+    <aside class="sidebar">
+      <div class="toc-box">
+        <div class="toc-box-header">このページの目次</div>
+        <ul class="toc-list">
+          <li><a href="#news">新着情報・補助金</a></li>
+          <li><a href="#new-farmer">新規就農者の方へ</a></li>
+          <li><a href="#nintei">認定新規就農者・認定農業者</a></li>
+          <li><a href="#daywork">dayworkのご案内</a></li>
+          <li><a href="#links">国・県リンク集</a></li>
+        </ul>
+      </div>
+      <div class="contact-box">
+        <div class="contact-box-header">お問い合わせ</div>
+        <div class="contact-box-body">
+          <div class="dept">農林水産課</div>
+          <div class="tel">0997-27-1111</div>
+          <div class="naisen">内線：224</div>
+          <div style="margin-top:8px; font-size:12px; color:#555;">
+            平日 8:30〜17:15<br>
+            （土日祝・年末年始を除く）
+          </div>
+        </div>
+      </div>
+    </aside>
+
+  </div><!-- /.layout-grid -->
+</div><!-- /.main-container -->
+
+<!-- ========== フッター ========== -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-office">
+      <strong>中種子町役場</strong><br>
+      〒891-3604 鹿児島県熊毛郡中種子町野間5935番地<br>
+      TEL：0997-27-1111（代）／ FAX：0997-27-0133
+    </div>
+    <div class="footer-links">
+      <a href="https://town.nakatane.kagoshima.jp/">中種子町トップページ</a>
+      <a href="https://town.nakatane.kagoshima.jp/koho/machinojoho/nogyo/index.html">農林水産業トップ</a>
+      <a href="https://town.nakatane.kagoshima.jp/sitemap.html">サイトマップ</a>
+    </div>
+    <hr class="footer-divider">
+    <div class="footer-copy">Copyright © Nakatane Town. All Rights Reserved.</div>
+  </div>
+</footer>
+
+<!-- ========== タブ切り替えスクリプト ========== -->
+<script>
+  document.querySelectorAll('.tab-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      switchTab(this.dataset.tab);
+    });
+  });
+
+  function switchTab(id) {
+    document.querySelectorAll('.tab-btn').forEach(function(btn) {
+      var isActive = btn.dataset.tab === id;
+      btn.classList.toggle('active', isActive);
+      btn.setAttribute('aria-selected', isActive);
+    });
+    document.querySelectorAll('.tab-panel').forEach(function(panel) {
+      panel.classList.toggle('active', panel.id === 'tab-' + id);
+    });
+  }
+</script>
+
+</body>
+</html>

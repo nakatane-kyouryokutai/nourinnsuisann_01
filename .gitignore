@@ -1,0 +1,7 @@
+# Officeの一時ファイル
+~$*
+*.tmp
+
+# OS生成ファイル
+.DS_Store
+Thumbs.db
