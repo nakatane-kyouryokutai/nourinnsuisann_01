@@ -6,8 +6,8 @@
   <meta name="referrer" content="no-referrer">
   <meta http-equiv="Content-Security-Policy"
     content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; img-src 'self'; font-src 'self'; connect-src 'none'; base-uri 'self'; form-action 'self';">
-  <meta name="description" content="●●補助制度についての詳細ページです。">
-  <title>●●補助制度について | 中種子町</title>
+  <meta name="description" content="中種子町地域畜産低コスト生産対策事業の詳細ページです。">
+  <title>中種子町地域畜産低コスト生産対策事業 | 中種子町</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; }
     body {
@@ -26,7 +26,12 @@
     }
     .page-header h1 {
       margin: 0;
-      font-size: 24px;
+      font-size: 22px;
+    }
+    .page-header p {
+      margin: 4px 0 0;
+      font-size: 14px;
+      opacity: 0.85;
     }
     .container {
       max-width: 860px;
@@ -37,18 +42,101 @@
       background: #fff;
       border: 1px solid #d0e8d8;
       border-radius: 10px;
-      padding: 24px;
+      padding: 28px 32px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     }
-    .article h2 {
-      margin-top: 0;
-      font-size: 22px;
+    .section {
+      margin-bottom: 24px;
+    }
+    .section-heading {
+      font-size: 16px;
+      font-weight: 700;
+      color: #1a4a2e;
+      background: #e8f5e9;
+      border-left: 4px solid #2d8a50;
+      padding: 6px 12px;
+      margin: 0 0 10px;
+      border-radius: 0 4px 4px 0;
+    }
+    .section p {
+      margin: 6px 0;
+      font-size: 15px;
+      color: #444;
+    }
+    .section ul {
+      margin: 6px 0;
+      padding-left: 1.2em;
+      list-style: none;
+    }
+    .section ul li::before {
+      content: "・";
+    }
+    .section ul li, .section ol li {
+      font-size: 15px;
+      color: #444;
+      margin-bottom: 4px;
+    }
+    .section ol {
+      margin: 6px 0;
+      padding-left: 0;
+      list-style: none;
+    }
+    .section ol li {
+      padding-left: 2em;
+      text-indent: -2em;
+    }
+    .section-heading-orange {
+      font-size: 16px;
+      font-weight: 700;
+      color: #7f3200;
+      background: #fff3e0;
+      border-left: 4px solid #e65100;
+      padding: 6px 12px;
+      margin: 0 0 10px;
+      border-radius: 0 4px 4px 0;
+    }
+    .amount {
+      color: #e65100;
+      font-weight: 700;
+    }
+    .pdf-links {
+      margin-top: 6px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .pdf-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      background: #fff3e0;
+      border: 1px solid #ffb74d;
+      border-radius: 6px;
+      font-size: 14px;
+      color: #7f3200;
+      width: fit-content;
+    }
+    .pdf-link::before {
+      content: "📄";
+      font-size: 14px;
+    }
+    .contact-section {
+      margin-top: 28px;
+      background: #e8f5e9;
+      border: 1px solid #a5d6b0;
+      border-radius: 8px;
+      padding: 16px 20px;
+    }
+    .contact-section h3 {
+      margin: 0 0 8px;
+      font-size: 15px;
       color: #1a4a2e;
     }
-    .article p {
-      margin: 12px 0;
-      color: #555;
+    .contact-section p {
+      margin: 0;
       font-size: 15px;
+      color: #333;
     }
     .back-link {
       margin-top: 26px;
@@ -64,13 +152,69 @@
 </head>
 <body>
   <header class="page-header">
-    <h1>新着情報</h1>
+    <h1>中種子町地域畜産低コスト生産対策事業</h1>
+    <p>事業実施主体：中央地区畜産生産組合</p>
   </header>
   <main class="container">
     <article class="article">
-      <p style="color:#888; font-size:15px; padding: 20px 0;">このページは現在準備中です。</p>
+
+      <div class="section">
+        <div class="section-heading">１．補助対象</div>
+        <p>生産基盤拡大のための以下の取組に対して補助を行う。</p>
+        <ol>
+          <li>ア　家畜飼養施設の新築および改築整備に要する費用（保管施設も含む）</li>
+          <li>イ　家畜排せつ物処理施設の新築または改善整備に要する費用</li>
+          <li>ウ　ア〜イの附帯設備</li>
+        </ol>
+      </div>
+
+      <div class="section">
+        <div class="section-heading">４．補助の条件</div>
+        <ul>
+          <li>町内に居住する畜産経営体で、生産基盤拡大に積極的に取り組む者</li>
+          <li>家畜排せつ物の管理の適正化に積極的に協力する者</li>
+          <li>計画予定地が都市計画区域または農地になっている場合は事前に所定の手続きを行うこと。</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <div class="section-heading">５．補助額等</div>
+        <p>補助額は整備に要した経費（税抜）の１／３以内とし、交付限度額を<span class="amount">300,000円</span>とする。</p>
+        <p>ただし、施設整備費用が総額3,000,000円（税込価格）を超えた場合は、堆肥舎建築費分の補助残の１割を加算し、<span class="amount">500,000円</span>とする。</p>
+        <p>畜産環境整備・畜産施設リース事業等で設置した者に対しては、交付限度額は<span class="amount">300,000円</span>とする。</p>
+      </div>
+
+      <div class="section">
+        <div class="section-heading">６．構造設備に関する基準</div>
+        <p>家畜排せつ物処理施設を整備する場合は、家畜の飼養施設となる適合施設を整備し、汚水が地下または周辺に流出しない構造となるよう床を不浸透材（コンクリート等）で製造し、側壁を付設し、雨水等の浸透を防ぐ施設設備とすること。</p>
+        <p>また、できるだけ屋根及び側壁を設け、雨水等の浸透を防ぐ施設設備とすること。</p>
+      </div>
+
+      <div class="section">
+        <div class="section-heading">７．申請等</div>
+        <p>本事業を行おうとする者は、別紙１の事業計画書及び別紙２の図面（建築業者等作成図面で可）に、事業費に係る見積書等を添えて中央地区畜産生産組合に提出する。</p>
+        <p>事業実施主体は、畜産農家等から提出のあった事業計画書等について審査を行い、要件を満たすものについて補助金の申請手続きを行う。</p>
+        <p>施設等が完成した場合、別紙３の完成届に事業費に係る領収書等を添えて事業実施主体に提出し、組合長または中種子町役場農林水産課の完成検査を受けること。</p>
+      </div>
+
+      <div class="section">
+        <div class="section-heading-orange">関連書類</div>
+        <div class="pdf-links">
+          <span class="pdf-link">実施要領（PDF添付予定）</span>
+          <span class="pdf-link">別紙１（事業計画書）</span>
+          <span class="pdf-link">別紙２（図面）</span>
+        </div>
+      </div>
+
+      <div class="contact-section">
+        <h3>お問い合わせ</h3>
+        <p>
+          <strong>中種子町農林水産課</strong><br>
+          TEL：0997-27-1111（内線224）
+        </p>
+      </div>
     </article>
-    <p class="back-link"><a href="index.html">← ポータルに戻る</a></p>
+    <a href="index.html" class="back-link">← ポータルに戻る</a>
   </main>
 </body>
 </html>
